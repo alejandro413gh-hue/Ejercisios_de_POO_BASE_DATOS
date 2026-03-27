@@ -8,14 +8,14 @@ class BaseDatos:
     def agregar(self, vehiculo):
         if vehiculo:
             self.__lista_vehiculos.append(vehiculo)
-            print(f"✓ Vehículo '{vehiculo.get_modelo()}' agregado correctamente.")
+            print(f" Vehículo '{vehiculo.get_modelo()}' agregado correctamente.")
         else:
             print("Error: Vehículo inválido.")
 
     # READ - mostrar todos
     def mostrar_todos(self):
         if len(self.__lista_vehiculos) == 0:
-            print("❌ No hay vehículos en la base de datos.")
+            print(" No hay vehículos en la base de datos.")
         else:
             print("\n" + "="*45)
             print("  BASE DE DATOS DE VEHÍCULOS")
@@ -30,7 +30,7 @@ class BaseDatos:
         if 0 <= indice < len(self.__lista_vehiculos):
             return self.__lista_vehiculos[indice]
         else:
-            print("❌ Índice no válido.")
+            print(" Índice no válido.")
             return None
 
     # UPDATE - modificar modelo de un vehículo
@@ -38,23 +38,23 @@ class BaseDatos:
         vehiculo = self.buscar(indice)
         if vehiculo:
             vehiculo.set_modelo(nuevo_modelo)
-            print(f"✓ Modelo actualizado a '{nuevo_modelo}'.")
+            print(f" Modelo actualizado a '{nuevo_modelo}'.")
 
     # UPDATE - modificar color de un vehículo
     def actualizar_color(self, indice, nuevo_color):
         vehiculo = self.buscar(indice)
         if vehiculo:
             vehiculo.set_color(nuevo_color)
-            print(f"✓ Color actualizado a '{nuevo_color}'.")
+            print(f" Color actualizado a '{nuevo_color}'.")
 
     # DELETE - eliminar vehículo
     def eliminar(self, indice):
         if 0 <= indice < len(self.__lista_vehiculos):
             eliminado = self.__lista_vehiculos.pop(indice)
-            print(f"✓ Vehículo '{eliminado.get_modelo()}' eliminado.")
+            print(f" Vehículo '{eliminado.get_modelo()}' eliminado.")
         else:
-            print("❌ Índice no válido.")
+            print(" Índice no válido.")
 
     # Mostrar cuántos hay
     def total(self):
-        print(f"\n📊 Total de vehículos: {len(self.__lista_vehiculos)}")
+        print(f"\n Total de vehículos: {len(self.__lista_vehiculos)}")
